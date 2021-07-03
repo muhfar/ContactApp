@@ -49,6 +49,8 @@ const FormContact: FC = () => {
                 source = {uri: response.assets[0].uri, fileName: response.assets[0].fileName};
                 setImageSrc(source)
                 uploadFile(source.uri, source.fileName)
+            } else if (response.didCancel) {
+                ToastAndroid.show('Please pick an image', 5)
             } else {
                 ToastAndroid.show('Something went wrong\nSelect image failed', 5)
             }
@@ -62,7 +64,7 @@ const FormContact: FC = () => {
                 updateContact(contactUser)
                 .then(response => {
                     ToastAndroid.show(response?.message, 5);
-                    dispatch(ResetContact())
+                    dispatch(ResetContact());
                     navigation.navigate('listContact');
                 })
                 .catch(error => {
@@ -72,15 +74,15 @@ const FormContact: FC = () => {
                 insertContact(contactUser)
                 .then(response => {
                     ToastAndroid.show(response?.message, 5);
-                    dispatch(ResetContact())
-                    navigation.navigate('listContact');
+                    dispatch(ResetContact());
+                    navigation.goBack();
                 })
                 .catch(error => {
                     ToastAndroid.show(`Something went wrong\n ${error}`, 5);
                 })
             }
         } else {
-            ToastAndroid.show(msg, 5)
+            ToastAndroid.show(msg, 5);
         }
     }
 

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         borderRadius:5, 
         alignItems:'center', 
         justifyContent: 'space-between',
-        padding:5,
+        padding:10,
         marginHorizontal: 5,
     },
     textPrimary: {
@@ -57,6 +57,9 @@ const styles = StyleSheet.create({
     },
     textLight: {
         color: '#fff'
+    },
+    textDetail: {
+        fontSize: 18
     },
     headingTitle: {
         fontSize: 24,
@@ -103,6 +106,25 @@ const styles = StyleSheet.create({
     imageSrc: {
         width: 80,
         height: 80,
+    },
+    bgHeader: {
+        backgroundColor: '#3755C8',
+        opacity: .9,
+        height: 150,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 50,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+    },
+    profilePicHeader: {
+        width: 100,
+        height: 100,
+    },
+    detailGroup: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 10
     }
 })
 

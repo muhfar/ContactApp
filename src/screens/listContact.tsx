@@ -9,75 +9,23 @@ import { TypeContactReducer } from '../redux/reducer/contact.reducer';
 import { deleteContact, getContact } from '../service/contact';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const DeleteBtn:FC<{item: Contacts}> = ({item}) => {
-    const dispatch = useDispatch();
-
-    const deleteHandler = (item: Contacts) => {
-        Alert.alert(
-            `Delete ${item.firstName, item.lastName}`,
-            'Are you sure want to delete this data?',
-            [
-                {
-                    text: 'Cancel',
-                },
-                {
-                    text: 'Delete',
-                    onPress: () => {
-                        deleteContact(item)
-                        .then(response => {
-                            dispatch(DeleteContact(item))
-                            ToastAndroid.show('Data has been successfully deleted!', 5)
-                        })
-                        .catch((error) => {
-                            ToastAndroid.show(`Something Went Wrong! \n${error}`, 5);
-                        })
-                    }
-                }
-            ]
-        )
-    }
-    return (
-        <TouchableOpacity 
-            style={[styles.btnMenu, {backgroundColor: '#C86137'}]}
-            onPress={() => deleteHandler(item)}
-        >
-            <Text style={styles.textLight}>Delete <MaterialCommunityIcons name="delete" size={16}/></Text>
-        </TouchableOpacity>
-    )
-}
-
-const EditBtn:FC<{item: Contacts}> = ({item}) => {
+const RenderContact: FC<{item: Contacts}> = ({item}) => {
     const navigation = useNavigation();
 
-    const editHandler = (item: Contacts) => {
-        navigation.navigate('formContact', {action: 'put', titleHeading: 'Edit Contact', item })
-    }
-    return (
-        <TouchableOpacity 
-            style={[styles.btnMenu, {backgroundColor: '#3756C8'}]}
-            onPress={() => editHandler(item)}
-        >
-            <Text style={styles.textLight}>Edit <MaterialCommunityIcons name="pencil" size={16}/></Text>
-        </TouchableOpacity>
-    )
-}
-
-const renderContact: ListRenderItem<Contacts> = ({item}) => {
-    return (
+    return (    
         <View style={styles.card}>
-            <View style={styles.bodyCard}>
-                <Image style={styles.photoProfile} source={(item.photo != 'N/A' && item.photo != '') ? {uri:item.photo} : require('../assets/images/no_avatar.png')} />
-                <View>
-                    <Text style={[styles.textPrimary, {fontSize: 18, fontWeight:'bold'}]}>{item.firstName} {item.lastName}</Text>
-                    <Text style={styles.textPrimary}>{item.age} years old</Text>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('detailContact', {id:item.id})}
+            >
+                <View style={styles.bodyCard}>
+                    <Image style={styles.photoProfile} source={(item.photo != 'N/A' && item.photo != '') ? {uri:item.photo} : require('../assets/images/no_avatar.png')} />
+                    <View>
+                        <Text style={[styles.textPrimary, {fontSize: 18, fontWeight:'bold'}]}>{item.firstName} {item.lastName}</Text>
+                        <Text style={styles.textPrimary}>{item.age} years old</Text>
+                    </View>
                 </View>
-            </View>
-            <View style={{flexDirection:'row'}}>
-                <EditBtn item={item} />
-                <DeleteBtn item={item} />
-            </View>
+            </TouchableOpacity>
         </View>
-        
     )
 }
 
@@ -113,7 +61,7 @@ const ListContact: FC = () => {
                     style={styles.listCard}
                     data={contactState}
                     keyExtractor={item => item.id}
-                    renderItem={renderContact}
+                    renderItem={({item})=> <RenderContact item={item}/>}
                 />
                 <View style={{flexDirection:'row-reverse'}}>
                     <TouchableOpacity

@@ -12,6 +12,7 @@ const Router: FC = () => {
             screenOptions={{headerStyle:{backgroundColor: '#379EC8', borderBottomLeftRadius:10, borderBottomRightRadius: 10, height: 70}, headerTintColor: '#FFF', headerTitleAlign:'center'}}>
                 <Stack.Screen name='listContact' component={Screens.ListContact} options={{title: 'Contact Apps'}}/>
                 <Stack.Screen name='formContact' component={Screens.FormContact} options={{title: 'Form Contact'}}/>
+                <Stack.Screen name='detailContact' component={Screens.DetailContact} options={{title: 'Detail Contact'}}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
