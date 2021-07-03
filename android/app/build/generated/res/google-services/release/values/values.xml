@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">732224105556-pitlbt62op474h7q0d2kqsnq25sckigq.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">732224105556</string>
+    <string name="google_api_key" translatable="false">AIzaSyBwF29STyirt99iHcF9y6LWI78EcFQpG1Y</string>
+    <string name="google_app_id" translatable="false">1:732224105556:android:492b34b84826a2ac19d1c1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBwF29STyirt99iHcF9y6LWI78EcFQpG1Y</string>
+    <string name="google_storage_bucket" translatable="false">simplecontactapps.appspot.com</string>
+    <string name="project_id" translatable="false">simplecontactapps</string>
+</resources>

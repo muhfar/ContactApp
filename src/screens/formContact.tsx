@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect, useState } from 'react';
-import { View, TextInput, Text, TouchableOpacity, Image, ToastAndroid } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, Image, ToastAndroid, ScrollView } from 'react-native';
 import ImagePicker, { launchImageLibrary } from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
@@ -26,7 +26,7 @@ const FormContact: FC = () => {
         
         try {
             await reference.putFile(uri);
-            ToastAndroid.show('Image succesfully uploaded!', 5)
+            ToastAndroid.show('Image successfully uploaded!', 5)
         } catch (error) {
             ToastAndroid.show('Something went wrong\nUpload image failed', 5)
         }
@@ -36,6 +36,52 @@ const FormContact: FC = () => {
         let newContact = contactUser;
         newContact.photo = url;
         setContactUser(newContact);
+    }
+
+    const selectImageHandler = ()  => {
+        const options : ImagePicker.ImageLibraryOptions = {
+            mediaType: 'photo',
+        }
+
+        launchImageLibrary(options,response => {
+            if (response.assets) {
+                let source: ImageSource;
+                source = {uri: response.assets[0].uri, fileName: response.assets[0].fileName};
+                setImageSrc(source)
+                uploadFile(source.uri, source.fileName)
+            } else {
+                ToastAndroid.show('Something went wrong\nSelect image failed', 5)
+            }
+        })
+    }
+
+    const submitFormHandler = () => {
+        const msg = validateFormContact(contactUser)
+        if (msg == '') {
+            if (action == 'put') {
+                updateContact(contactUser)
+                .then(response => {
+                    ToastAndroid.show(response?.message, 5);
+                    dispatch(ResetContact())
+                    navigation.navigate('listContact');
+                })
+                .catch(error => {
+                    ToastAndroid.show(`Something went wrong\n ${error}`, 5);
+                })
+            } else {
+                insertContact(contactUser)
+                .then(response => {
+                    ToastAndroid.show(response?.message, 5);
+                    dispatch(ResetContact())
+                    navigation.navigate('listContact');
+                })
+                .catch(error => {
+                    ToastAndroid.show(`Something went wrong\n ${error}`, 5);
+                })
+            }
+        } else {
+            ToastAndroid.show(msg, 5)
+        }
     }
 
     useFocusEffect(useCallback(() => {
@@ -59,7 +105,7 @@ const FormContact: FC = () => {
     }, [])
 
     return (
-        <View style={[styles.container, {paddingTop:40}]}>
+        <ScrollView style={[styles.container, {paddingTop:40}]}>
             <Text style={styles.headingTitle}>{headingTitle}</Text>
             <View style={styles.formContact}>
                 <TextInput 
@@ -95,58 +141,13 @@ const FormContact: FC = () => {
                 />
                 <TouchableOpacity
                     style={styles.btnSelectImage}
-                    onPress={() => {
-                        const options : ImagePicker.ImageLibraryOptions = {
-                            mediaType: 'photo',
-                        }
-
-                        launchImageLibrary(options,response => {
-                            if (response.assets) {
-                                let source: ImageSource;
-                                source = {uri: response.assets[0].uri, fileName: response.assets[0].fileName};
-                                setImageSrc(source)
-                                uploadFile(source.uri, source.fileName)
-                            } else {
-                                ToastAndroid.show('Something went wrong\nSelect image failed', 5)
-                            }
-                        })
-                    }}
+                    onPress={() => selectImageHandler()}
                 >
                     <Text  style={styles.textLight}>Select Image</Text> 
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.btnSubmit}
-                    onPress={() => {
-                        if (validateFormContact(contactUser)) {
-                                if (contactUser.photo != '') {
-                                    if (action == 'put') {
-                                        updateContact(contactUser)
-                                        .then(response => {
-                                            ToastAndroid.show(response?.message, 5);
-                                            dispatch(ResetContact())
-                                            navigation.navigate('listContact');
-                                        })
-                                        .catch(error => {
-                                            ToastAndroid.show(`Something went wrong\n ${error}`, 5);
-                                        })
-                                    } else {
-                                        insertContact(contactUser)
-                                        .then(response => {
-                                            ToastAndroid.show(response?.message, 5);
-                                            dispatch(ResetContact())
-                                            navigation.navigate('listContact');
-                                        })
-                                        .catch(error => {
-                                            ToastAndroid.show(`Something went wrong\n ${error}`, 5);
-                                        })
-                                    }
-                                } else {
-                                    ToastAndroid.show('Please select an image!', 5)
-                                }
-                        } else {
-                            ToastAndroid.show('Please fill the form!', 5)
-                        }
-                    }}
+                    onPress={() => submitFormHandler()}
                 >
                     <Text style={styles.textLight}>{(action == 'put') ? 'Update Contact' : 'Submit Contact'}</Text>
                 </TouchableOpacity>
@@ -159,7 +160,7 @@ const FormContact: FC = () => {
                     </>
                 ) : null}
             </View>
-        </View>
+        </ScrollView>
     )
 }
 

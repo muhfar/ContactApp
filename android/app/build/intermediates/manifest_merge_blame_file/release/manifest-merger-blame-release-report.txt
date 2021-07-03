@@ -1,0 +1,151 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.contactapp2345"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:4:5-67
+11-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.WAKE_LOCK" />
+12-->[:react-native-firebase_storage] D:\LAWENCON\BTPN\ContactApp\node_modules\@react-native-firebase\storage\android\build\intermediates\library_manifest\release\AndroidManifest.xml:12:5-68
+12-->[:react-native-firebase_storage] D:\LAWENCON\BTPN\ContactApp\node_modules\@react-native-firebase\storage\android\build\intermediates\library_manifest\release\AndroidManifest.xml:12:22-65
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[:react-native-firebase_storage] D:\LAWENCON\BTPN\ContactApp\node_modules\@react-native-firebase\storage\android\build\intermediates\library_manifest\release\AndroidManifest.xml:13:5-79
+13-->[:react-native-firebase_storage] D:\LAWENCON\BTPN\ContactApp\node_modules\@react-native-firebase\storage\android\build\intermediates\library_manifest\release\AndroidManifest.xml:13:22-76
+14
+15    <application
+15-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:6:5-24:19
+16        android:name="com.contactapp2345.MainApplication"
+16-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:7:7-38
+17        android:allowBackup="false"
+17-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:11:7-34
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.3.1] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8f4dfadce8b90b8fa7f72007c5536a1d\core-1.3.1\AndroidManifest.xml:24:18-86
+19        android:icon="@mipmap/ic_launcher"
+19-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:9:7-41
+20        android:label="@string/app_name"
+20-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:8:7-39
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:10:7-52
+22        android:theme="@style/AppTheme" >
+22-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:12:7-38
+23        <activity
+23-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:13:7-23:18
+24            android:name="com.contactapp2345.MainActivity"
+24-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:14:9-37
+25            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+25-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:16:9-86
+26            android:label="@string/app_name"
+26-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:15:9-41
+27            android:launchMode="singleTask"
+27-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:17:9-40
+28            android:windowSoftInputMode="adjustResize" >
+28-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:18:9-51
+29            <intent-filter>
+29-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:19:9-22:25
+30                <action android:name="android.intent.action.MAIN" />
+30-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:20:13-65
+30-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:20:21-62
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:21:13-73
+32-->D:\LAWENCON\BTPN\ContactApp\android\app\src\main\AndroidManifest.xml:21:23-70
+33            </intent-filter>
+34        </activity>
+35
+36        <provider
+36-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:12:9-20:20
+37            android:name="com.imagepicker.ImagePickerProvider"
+37-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:13:13-63
+38            android:authorities="com.contactapp2345.imagepickerprovider"
+38-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:14:13-71
+39            android:exported="false"
+39-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:15:13-37
+40            android:grantUriPermissions="true" >
+40-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:16:13-47
+41            <meta-data
+41-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:17:13-19:70
+42                android:name="android.support.FILE_PROVIDER_PATHS"
+42-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:18:17-67
+43                android:resource="@xml/imagepicker_provider_paths" />
+43-->[:react-native-image-picker] D:\LAWENCON\BTPN\ContactApp\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\release\AndroidManifest.xml:19:17-67
+44        </provider>
+45
+46        <activity
+46-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+47            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+47-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+48            android:excludeFromRecents="true"
+48-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+49            android:exported="false"
+49-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+50            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+50-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+51        <!--
+52            Service handling Google Sign-In user revocation. For apps that do not integrate with
+53            Google Sign-In, this service will never be started.
+54        -->
+55        <service
+55-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+56            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+56-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+57            android:exported="true"
+57-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+58            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+58-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+59            android:visibleToInstantApps="true" />
+59-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\8e7f701a8d3a5faf19f2e2c092105b6b\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+60        <service
+60-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\f3c8bd8b60c16750b457c15e78b78c98\jetified-firebase-storage-20.0.0\AndroidManifest.xml:30:9-36:19
+61            android:name="com.google.firebase.components.ComponentDiscoveryService"
+61-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\f3c8bd8b60c16750b457c15e78b78c98\jetified-firebase-storage-20.0.0\AndroidManifest.xml:31:13-84
+62            android:directBootAware="true"
+62-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+63            android:exported="false" >
+63-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\f3c8bd8b60c16750b457c15e78b78c98\jetified-firebase-storage-20.0.0\AndroidManifest.xml:32:13-37
+64            <meta-data
+64-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\f3c8bd8b60c16750b457c15e78b78c98\jetified-firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
+65                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+65-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\f3c8bd8b60c16750b457c15e78b78c98\jetified-firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
+66                android:value="com.google.firebase.components.ComponentRegistrar" />
+66-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\f3c8bd8b60c16750b457c15e78b78c98\jetified-firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
+67        </service>
+68
+69        <activity
+69-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\9417d41dde92678ab8488ec0684ca850\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+70            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+70-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\9417d41dde92678ab8488ec0684ca850\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+71            android:exported="false"
+71-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\9417d41dde92678ab8488ec0684ca850\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+72-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\9417d41dde92678ab8488ec0684ca850\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+73
+74        <provider
+74-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+75            android:name="com.google.firebase.provider.FirebaseInitProvider"
+75-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+76            android:authorities="com.contactapp2345.firebaseinitprovider"
+76-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+77            android:directBootAware="true"
+77-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+78            android:exported="false"
+78-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+79            android:initOrder="100" />
+79-->[com.google.firebase:firebase-common:20.0.0] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\dd3c2617c0f6359f3b13e51ce6c2db19\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+80
+81        <meta-data
+81-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\80e5d0ed6b9a943bf2a9b1012d164ae7\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+82            android:name="com.google.android.gms.version"
+82-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\80e5d0ed6b9a943bf2a9b1012d164ae7\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+83            android:value="@integer/google_play_services_version" />
+83-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\F4\.gradle\caches\transforms-2\files-2.1\80e5d0ed6b9a943bf2a9b1012d164ae7\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+84    </application>
+85
+86</manifest>

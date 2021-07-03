@@ -26,7 +26,7 @@ const DeleteBtn:FC<{item: Contacts}> = ({item}) => {
                         deleteContact(item)
                         .then(response => {
                             dispatch(DeleteContact(item))
-                            ToastAndroid.show(response?.message, 5)
+                            ToastAndroid.show('Data has been successfully deleted!', 5)
                         })
                         .catch((error) => {
                             ToastAndroid.show(`Something Went Wrong! \n${error}`, 5);

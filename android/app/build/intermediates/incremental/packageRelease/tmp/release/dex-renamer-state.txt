@@ -1,0 +1,4 @@
+#Sat Jul 03 12:51:07 WIB 2021
+base.0=D\:\\LAWENCON\\BTPN\\ContactApp\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

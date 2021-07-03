@@ -9,7 +9,6 @@ const getContact = async () => {
         const { data, status } = await axios.get<Respons<Contacts[]>>(BASE_URL)
         if (status == 200) return data
     } catch (error) {
-        console.log(error.response.status)
         throw error.response.data.message
     }
 }
@@ -30,11 +29,9 @@ const updateContact = async (body: Contacts) => {
         bodyReq.lastName = body.lastName
         bodyReq.age = body.age
         bodyReq.photo = body.photo
-        console.log(bodyReq)
         const { data, status } = await axios.put<Respons<any>>(`${BASE_URL}/${body.id}`, bodyReq)
         if (status == 201) return data
     } catch (error) {
-        console.log(error)
         throw error.response.data.message
     }
 }
