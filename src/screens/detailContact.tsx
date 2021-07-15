@@ -2,10 +2,11 @@ import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/nativ
 import React, { FC, useCallback, useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, Image, ToastAndroid, ScrollView, Alert } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from '../assets/styles/listContacs';
 import Contacts from '../model/contact';
-import { DeleteContact, ResetContact } from '../redux/action/contact.action';
+import { DeleteContact, FetchDeleteContact, ResetContact } from '../redux/action/contact.action';
+import { TypeContactReducer } from '../redux/reducer/contact.reducer';
 import { deleteContact, getContactById } from '../service/contact';
 
 const DeleteBtn:FC<{item: Contacts}> = ({item}) => {
@@ -23,16 +24,8 @@ const DeleteBtn:FC<{item: Contacts}> = ({item}) => {
                 {
                     text: 'Delete',
                     onPress: () => {
-                        deleteContact(item)
-                        .then(response => {
-                            dispatch(DeleteContact(item))
-                            ToastAndroid.show('Data has been successfully deleted!', 5)
-                            dispatch(ResetContact())
-                            navigation.goBack()
-                        })
-                        .catch((error) => {
-                            ToastAndroid.show(`Something Went Wrong! \n${error}`, 5);
-                        })
+                        dispatch(FetchDeleteContact(item));
+                        navigation.goBack();
                     }
                 }
             ]
@@ -65,7 +58,6 @@ const EditBtn:FC<{item: Contacts}> = ({item}) => {
 }
 
 const DetailContact:FC = () => {
-    const navigation = useNavigation();
     const route = useRoute();
     const [contactId, setContactId] = useState('');
     const [contactUser, setContactUser] = useState<Contacts>(new Contacts());
